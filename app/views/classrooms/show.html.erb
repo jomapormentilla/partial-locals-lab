@@ -1,5 +1,9 @@
 Classroom Info
 <p>
-<%= @classroom.course_name %>
-<%= @classroom.semester %>
+<%= render partial: 'classroom', locals: { classroom: @classroom } %>
 </p>
+
+<h3>Students</h3>
+<% @classroom.students.each do |student| %>
+    <%= render partial: 'students/student', locals: { student: student } %>
+<% end %>
